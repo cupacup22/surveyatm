@@ -1,52 +1,51 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kepuasan Mesin ATM</title>
-  <style>
-    /* CSS untuk membuat tampilan responsif */
-    @media only screen and (max-width: 768px) {
-      /* CSS untuk tampilan mobile */
-     .container {
-        width: 90%;
-        margin: 0 auto;
-      }
-    }
-    @media only screen and (min-width: 769px) {
-      /* CSS untuk tampilan desktop */
-     .container {
-        width: 60%;
-        margin: 0 auto;
-      }
-    }
-  </style>
+	<title>Survey Kepuasan Mesin ATM</title>
+	<style>
+		.emoji {
+			font-size: 36px;
+			cursor: pointer;
+		}
+		
+		.emoji:hover {
+			transform: scale(1.2);
+		}
+		
+		.selected {
+			color: #007bff;
+			transform: scale(1.5);
+		}
+	</style>
 </head>
 <body>
-  <h1>Kepuasan Mesin ATM</h1>
-  <div class="container">
-    <p>Pilih emoji yang sesuai dengan tingkat kepuasan Anda terhadap mesin ATM kami:</p>
-    <div class="emojis">
-      <div class="emoji">
-        <img src="https://www.emoji.com/images/emoji/apple/130/grimacing-face.png" alt="Sangat Tidak Puas">
-      </div>
-      <div class="emoji">
-        <img src="https://www.emoji.com/images/emoji/apple/130/sad-but-relieved-face.png" alt="Kurang Puas">
-      </div>
-      <div class="emoji">
-        <img src="https://www.emoji.com/images/emoji/apple/130/slightly-smiling-face.png" alt="Cukup Puas">
-      </div>
-      <div class="emoji">
-        <img src="https://www.emoji.com/images/emoji/apple/130/smiling-face-with-smiling-eyes.png" alt="Puas">
-      </div>
-      <div class="emoji">
-        <img src="https://www.emoji.com/images/emoji/apple/130/smiling-face-with-heart-eyes.png" alt="Sangat Puas">
-      </div>
-    </div>
-    <div class="result">
-      <h2>Hasil Ringkasan Survei Harian</h2>
-      <a href="#" class="download">Unduh Data</a>
-    </div>
-  </div>
+	<h1>Survey Kepuasan Mesin ATM</h1>
+	<p>Pilih emoji yang sesuai dengan tingkat kepuasan Anda terhadap mesin ATM kami:</p>
+	<div class="emoji-container">
+		<span class="emoji" id="very-unhappy" onclick="selectEmoji(this)">😠</span>
+		<span class="emoji" id="unhappy" onclick="selectEmoji(this)">😐</span>
+		<span class="emoji" id="neutral" onclick="selectEmoji(this)">🙂</span>
+		<span class="emoji" id="happy" onclick="selectEmoji(this)">😊</span>
+		<span class="emoji" id="very-happy" onclick="selectEmoji(this)">😍</span>
+	</div>
+	
+	<button id="download-data" onclick="downloadData()">Unduh Data</button>
+	
+	<script>
+		let selectedEmoji = null;
+		
+		function selectEmoji(emoji) {
+			if (selectedEmoji) {
+				selectedEmoji.classList.remove("selected");
+			}
+			emoji.classList.add("selected");
+			selectedEmoji = emoji;
+		}
+		
+		function downloadData() {
+			// Add code to download data here
+			alert("Data downloaded!");
+		}
+	</script>
 </body>
 </html>
